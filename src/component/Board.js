@@ -18,9 +18,9 @@ class Board extends React.Component{
             <div className="container">
                 <div className="col"> STUDENT INFO</div>
                  <div className="cell">
-                     <div className="header col" onClick={(dir)=>{this.props.handleClick("name")}}> NAME</div>
-                     <div className="header col" onClick={(dir)=>{this.props.handleClick("age")}}>AGE</div>
-                     <div className="header col" onClick={(dir)=>{this.props.handleClick("dob")}}>DOB</div>
+                     <div className="header col" onClick={()=>{this.props.handleClick("name")}}> NAME</div>
+                     <div className="header col" onClick={()=>{this.props.handleClick("age")}}>AGE</div>
+                     <div className="header col" onClick={()=>{this.props.handleClick("dob")}}>DOB</div>
                 </div>
                 
                 {elem}
