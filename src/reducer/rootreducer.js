@@ -14,31 +14,17 @@ function rootreducer(state = initialState, action){
         let data = [...state.student_details];
         if(reqCol =="name"){
             data.sort((a,b)=>{
-                if(isAsec){
-                    return a.name.localeCompare(b.name);
-                }else{
-                    return b.name.localeCompare(a.name);
-                }
-                
+                return isAsec? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);     
             })
         }else if(reqCol =="age"){
             data.sort((a,b)=>{
-                if(isAsec){
-                    return a.age-b.age;
-                }else{
-                    return b.age-a.age;
-                }   
+                return isAsec ? a.age-b.age : b.age-a.age;   
             })
         }else if(reqCol =="dob"){
             data.sort((a,b)=>{
-                if(isAsec){
-                    return new Date(a.dob) - new Date(b.dob); 
-                }else{
-                    return new Date(b.dob) - new Date(a.dob);;
-                }  
+                return isAsec ? new Date(a.dob) - new Date(b.dob) : Date(b.dob) - new Date(a.dob);
             })
         }
-        // console.log("DATA", data);
         let newSortWay = state.isAsec ? false : true;
     return {...state,student_details:data,isAsec:newSortWay };
     }else{
