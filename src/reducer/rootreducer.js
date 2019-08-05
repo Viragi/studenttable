@@ -25,7 +25,7 @@ function rootreducer(state = initialState, action){
                 return isAsec ? new Date(a.dob) - new Date(b.dob) : Date(b.dob) - new Date(a.dob);
             })
         }
-        let newSortWay = state.isAsec ? false : true;
+        let newSortWay = !state.isAsec;
     return {...state,student_details:data,isAsec:newSortWay };
     }else{
         return state;
