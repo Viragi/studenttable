@@ -4,7 +4,6 @@ import Cell from './Cell';
 
 class Board extends React.Component{
     render(){
-        console.log(this.props)
         let elem =this.props.student_details.map((item)=>{
             return(
                 <div className="row">

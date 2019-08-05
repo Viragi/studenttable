@@ -22,7 +22,7 @@ function rootreducer(state = initialState, action){
             })
         }else if(reqCol =="dob"){
             data.sort((a,b)=>{
-                return isAsec ? new Date(a.dob) - new Date(b.dob) : Date(b.dob) - new Date(a.dob);
+                return isAsec ? (new Date(a.dob) - new Date(b.dob)) : (new Date(b.dob) - new Date(a.dob));
             })
         }
         return {...state,student_details:data,isAsec:!state.isAsec };
