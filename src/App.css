@@ -1,6 +1,5 @@
 .cell{
     display: flex;
-    margin-left: 25px;
     /* border: solid black 1px; */
 }
 .col{  

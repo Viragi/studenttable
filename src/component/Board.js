@@ -16,10 +16,11 @@ class Board extends React.Component{
 
         return(
             <div className="container">
+                <div className="col"> STUDENT INFO</div>
                  <div className="cell">
-                     <div className="header col"> NAME</div>
-                     <div className="header col">AGE</div>
-                     <div className="header col">DOB</div>
+                     <div className="header col" onClick={(dir)=>{this.props.handleClick("name")}}> NAME</div>
+                     <div className="header col" onClick={(dir)=>{this.props.handleClick("age")}}>AGE</div>
+                     <div className="header col" onClick={(dir)=>{this.props.handleClick("dob")}}>DOB</div>
                 </div>
                 
                 {elem}
@@ -37,7 +38,12 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return{
-        
+        handleClick : (reqCol)=>{
+            dispatch({
+                type: "sort",
+                reqCol: reqCol
+            });
+        }
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Board);
