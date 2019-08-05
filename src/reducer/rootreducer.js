@@ -32,11 +32,10 @@ function rootreducer(state = initialState, action){
         }else if(reqCol =="dob"){
             data.sort((a,b)=>{
                 if(isAsec){
-                    return a.name.localeCompare(b.name);
+                    return new Date(a.dob) - new Date(b.dob); 
                 }else{
-                    return b.name.localeCompare(a.name);
-                }
-                
+                    return new Date(b.dob) - new Date(a.dob);;
+                }  
             })
         }
         // console.log("DATA", data);
